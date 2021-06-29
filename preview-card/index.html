@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Карточка №1</title>
+</head>
+
+<body>
+  <header class="header">
+    <h1 class="top-title">Карточка анонса с функциональным интерфейсом</h1>
+    <p class="top-subtitle">Увидел эту карточку в Steam и мне понравился эффект плавного появления информации в
+      карточке, при наведении. Решил добавить в коллекцию</p>
+  </header>
+  
+  <div class="wrapper">
+
+    <div class="card-list">
+
+      <article class="preview-card">
+        <!-- ссылка на отдельную страничку  -->
+        <a class="preview-card__link" href="#" aria-label="Подробнее о товаре" title="Подробнее о товаре"></a>
+        <!-- фоновая картинка карточки  -->
+        <img class="preview-card__bg" src="img/hero_capsule.jpg" alt="Картинка анонса" width="345" height="450">
+
+        <!-- появляющаяся шапка карточки - показываем при наведении на карточку  -->
+        <div class="preview-card__hover-image">
+          <video class="preview-card__video" loop="" preload="none" muted="muted">
+            <source src="video/1.webm" type="video/webm">
+          </video>
+        </div>
+
+        <!-- детальная информация о продукте  -->
+        <div class="preview-card__details">
+          <!-- заголовок карточки  -->
+          <h3 class="preview-card__title">Mass Effect™ Legendary Edition</h3>
+          <!-- перечень характеристик  -->
+          <ul class="preview-card__list">
+            <li class="preview-card__list-item">
+              <span class="preview-card__label">Developer:</span>
+              <span class="preview-card__data">
+                <a class="preview-card__data-link" href="#">BioWare</a>
+              </span>
+            </li>
+            <li class="preview-card__list-item">
+              <span class="preview-card__label">Publisher:</span>
+              <span class="preview-card__data">
+                <a class="preview-card__data-link" href="#">Electronic Arts</a>
+              </span>
+            </li>
+            <li class="preview-card__list-item"
+              data-tooltip-html="90% of the 12,840 user reviews for this game are positive.">
+              <span class="preview-card__label">All Reviews:</span>
+              <span class="preview-card__data">
+                <span class="preview-card__positive">Very Positive </span>
+                <span>(12,840)</span>
+              </span>
+            </li>
+          </ul>
+
+          <!-- подвал карточки в виде перечня цен и скидки  -->
+          <div class="preview-card__footer">
+            <!-- кнопка добавить в корзину  -->
+            <button class="preview-card__button">Add to Cart</button>
+            <!-- цена  -->
+            <div class="preview-card__price">
+              <!-- процент скидки  -->
+              <span class="preview-card__sale">-17%</span>
+              <!-- цена до и после  -->
+              <p class="preview-card__cost">
+                <del>3499 pуб.</del>2904 pуб.</p>
+            </div>
+          </div> <!-- .preview-card__footer -->
+
+        </div> <!-- .preview-card__details -->
+
+      </article>
+
+      <article class="preview-card">
+        <!-- ссылка на отдельную страничку  -->
+        <a class="preview-card__link" href="#" aria-label="Подробнее о товаре" title="Подробнее о товаре"></a>
+        <!-- фоновая картинка карточки  -->
+        <img class="preview-card__bg" src="img/hero_capsule.jpg" alt="Картинка анонса" width="345" height="450">
+
+        <!-- появляющаяся шапка карточки - показываем при наведении на карточку  -->
+        <div class="preview-card__hover-image">
+          <video class="preview-card__video" loop="" preload="none" muted="muted">
+            <source src="video/1.webm" type="video/webm">
+          </video>
+        </div>
+
+        <!-- детальная информация о продукте  -->
+        <div class="preview-card__details">
+          <!-- заголовок карточки  -->
+          <h3 class="preview-card__title">Mass Effect™ Legendary Edition</h3>
+          <!-- перечень характеристик  -->
+          <ul class="preview-card__list">
+            <li class="preview-card__list-item">
+              <span class="preview-card__label">Developer:</span>
+              <span class="preview-card__data">
+                <a class="preview-card__data-link" href="#">BioWare</a>
+              </span>
+            </li>
+            <li class="preview-card__list-item">
+              <span class="preview-card__label">Publisher:</span>
+              <span class="preview-card__data">
+                <a class="preview-card__data-link" href="#">Electronic Arts</a>
+              </span>
+            </li>
+            <li class="preview-card__list-item"
+              data-tooltip-html="90% of the 12,840 user reviews for this game are positive.">
+              <span class="preview-card__label">All Reviews:</span>
+              <span class="preview-card__data">
+                <span class="preview-card__positive">Very Positive </span>
+                <span>(12,840)</span>
+              </span>
+            </li>
+          </ul>
+
+          <!-- подвал карточки в виде перечня цен и скидки  -->
+          <div class="preview-card__footer">
+            <!-- кнопка добавить в корзину  -->
+            <button class="preview-card__button">Add to Cart</button>
+            <!-- цена  -->
+            <div class="preview-card__price">
+              <!-- процент скидки  -->
+              <span class="preview-card__sale">-17%</span>
+              <!-- цена до и после  -->
+              <p class="preview-card__cost">
+                <del>3499 pуб.</del>2904 pуб.</p>
+            </div>
+          </div> <!-- .preview-card__footer -->
+
+        </div> <!-- .preview-card__details -->
+
+      </article>
+
+      <article class="preview-card">
+        <!-- ссылка на отдельную страничку  -->
+        <a class="preview-card__link" href="#" aria-label="Подробнее о товаре" title="Подробнее о товаре"></a>
+        <!-- фоновая картинка карточки  -->
+        <img class="preview-card__bg" src="img/hero_capsule.jpg" alt="Картинка анонса" width="345" height="450">
+
+        <!-- появляющаяся шапка карточки - показываем при наведении на карточку  -->
+        <div class="preview-card__hover-image">
+          <video class="preview-card__video" loop="" preload="none" muted="muted">
+            <source src="video/1.webm" type="video/webm">
+          </video>
+        </div>
+
+        <!-- детальная информация о продукте  -->
+        <div class="preview-card__details">
+          <!-- заголовок карточки  -->
+          <h3 class="preview-card__title">Mass Effect™ Legendary Edition</h3>
+          <!-- перечень характеристик  -->
+          <ul class="preview-card__list">
+            <li class="preview-card__list-item">
+              <span class="preview-card__label">Developer:</span>
+              <span class="preview-card__data">
+                <a class="preview-card__data-link" href="#">BioWare</a>
+              </span>
+            </li>
+            <li class="preview-card__list-item">
+              <span class="preview-card__label">Publisher:</span>
+              <span class="preview-card__data">
+                <a class="preview-card__data-link" href="#">Electronic Arts</a>
+              </span>
+            </li>
+            <li class="preview-card__list-item"
+              data-tooltip-html="90% of the 12,840 user reviews for this game are positive.">
+              <span class="preview-card__label">All Reviews:</span>
+              <span class="preview-card__data">
+                <span class="preview-card__positive">Very Positive </span>
+                <span>(12,840)</span>
+              </span>
+            </li>
+          </ul>
+
+          <!-- подвал карточки в виде перечня цен и скидки  -->
+          <div class="preview-card__footer">
+            <!-- кнопка добавить в корзину  -->
+            <button class="preview-card__button">Add to Cart</button>
+            <!-- цена  -->
+            <div class="preview-card__price">
+              <!-- процент скидки  -->
+              <span class="preview-card__sale">-17%</span>
+              <!-- цена до и после  -->
+              <p class="preview-card__cost">
+                <del>3499 pуб.</del>2904 pуб.</p>
+            </div>
+          </div> <!-- .preview-card__footer -->
+
+        </div> <!-- .preview-card__details -->
+
+      </article>
+
+      <article class="preview-card">
+        <!-- ссылка на отдельную страничку  -->
+        <a class="preview-card__link" href="#" aria-label="Подробнее о товаре" title="Подробнее о товаре"></a>
+        <!-- фоновая картинка карточки  -->
+        <img class="preview-card__bg" src="img/hero_capsule.jpg" alt="Картинка анонса" width="345" height="450">
+
+        <!-- появляющаяся шапка карточки - показываем при наведении на карточку  -->
+        <div class="preview-card__hover-image">
+          <video class="preview-card__video" loop="" preload="none" muted="muted">
+            <source src="video/1.webm" type="video/webm">
+          </video>
+        </div>
+
+        <!-- детальная информация о продукте  -->
+        <div class="preview-card__details">
+          <!-- заголовок карточки  -->
+          <h3 class="preview-card__title">Mass Effect™ Legendary Edition</h3>
+          <!-- перечень характеристик  -->
+          <ul class="preview-card__list">
+            <li class="preview-card__list-item">
+              <span class="preview-card__label">Developer:</span>
+              <span class="preview-card__data">
+                <a class="preview-card__data-link" href="#">BioWare</a>
+              </span>
+            </li>
+            <li class="preview-card__list-item">
+              <span class="preview-card__label">Publisher:</span>
+              <span class="preview-card__data">
+                <a class="preview-card__data-link" href="#">Electronic Arts</a>
+              </span>
+            </li>
+            <li class="preview-card__list-item"
+              data-tooltip-html="90% of the 12,840 user reviews for this game are positive.">
+              <span class="preview-card__label">All Reviews:</span>
+              <span class="preview-card__data">
+                <span class="preview-card__positive">Very Positive </span>
+                <span>(12,840)</span>
+              </span>
+            </li>
+          </ul>
+
+          <!-- подвал карточки в виде перечня цен и скидки  -->
+          <div class="preview-card__footer">
+            <!-- кнопка добавить в корзину  -->
+            <button class="preview-card__button">Add to Cart</button>
+            <!-- цена  -->
+            <div class="preview-card__price">
+              <!-- процент скидки  -->
+              <span class="preview-card__sale">-17%</span>
+              <!-- цена до и после  -->
+              <p class="preview-card__cost">
+                <del>3499 pуб.</del>2904 pуб.</p>
+            </div>
+          </div> <!-- .preview-card__footer -->
+
+        </div> <!-- .preview-card__details -->
+
+      </article>
+
+      <article class="preview-card">
+        <!-- ссылка на отдельную страничку  -->
+        <a class="preview-card__link" href="#" aria-label="Подробнее о товаре" title="Подробнее о товаре"></a>
+        <!-- фоновая картинка карточки  -->
+        <img class="preview-card__bg" src="img/hero_capsule.jpg" alt="Картинка анонса" width="345" height="450">
+
+        <!-- появляющаяся шапка карточки - показываем при наведении на карточку  -->
+        <div class="preview-card__hover-image">
+          <video class="preview-card__video" loop="" preload="none" muted="muted">
+            <source src="video/1.webm" type="video/webm">
+          </video>
+        </div>
+
+        <!-- детальная информация о продукте  -->
+        <div class="preview-card__details">
+          <!-- заголовок карточки  -->
+          <h3 class="preview-card__title">Mass Effect™ Legendary Edition</h3>
+          <!-- перечень характеристик  -->
+          <ul class="preview-card__list">
+            <li class="preview-card__list-item">
+              <span class="preview-card__label">Developer:</span>
+              <span class="preview-card__data">
+                <a class="preview-card__data-link" href="#">BioWare</a>
+              </span>
+            </li>
+            <li class="preview-card__list-item">
+              <span class="preview-card__label">Publisher:</span>
+              <span class="preview-card__data">
+                <a class="preview-card__data-link" href="#">Electronic Arts</a>
+              </span>
+            </li>
+            <li class="preview-card__list-item"
+              data-tooltip-html="90% of the 12,840 user reviews for this game are positive.">
+              <span class="preview-card__label">All Reviews:</span>
+              <span class="preview-card__data">
+                <span class="preview-card__positive">Very Positive </span>
+                <span>(12,840)</span>
+              </span>
+            </li>
+          </ul>
+
+          <!-- подвал карточки в виде перечня цен и скидки  -->
+          <div class="preview-card__footer">
+            <!-- кнопка добавить в корзину  -->
+            <button class="preview-card__button">Add to Cart</button>
+            <!-- цена  -->
+            <div class="preview-card__price">
+              <!-- процент скидки  -->
+              <span class="preview-card__sale">-17%</span>
+              <!-- цена до и после  -->
+              <p class="preview-card__cost">
+                <del>3499 pуб.</del>2904 pуб.</p>
+            </div>
+          </div> <!-- .preview-card__footer -->
+
+        </div> <!-- .preview-card__details -->
+
+      </article>
+
+      <article class="preview-card">
+        <!-- ссылка на отдельную страничку  -->
+        <a class="preview-card__link" href="#" aria-label="Подробнее о товаре" title="Подробнее о товаре"></a>
+        <!-- фоновая картинка карточки  -->
+        <img class="preview-card__bg" src="img/hero_capsule.jpg" alt="Картинка анонса" width="345" height="450">
+
+        <!-- появляющаяся шапка карточки - показываем при наведении на карточку  -->
+        <div class="preview-card__hover-image">
+          <video class="preview-card__video" loop="" preload="none" muted="muted">
+            <source src="video/1.webm" type="video/webm">
+          </video>
+        </div>
+
+        <!-- детальная информация о продукте  -->
+        <div class="preview-card__details">
+          <!-- заголовок карточки  -->
+          <h3 class="preview-card__title">Mass Effect™ Legendary Edition</h3>
+          <!-- перечень характеристик  -->
+          <ul class="preview-card__list">
+            <li class="preview-card__list-item">
+              <span class="preview-card__label">Developer:</span>
+              <span class="preview-card__data">
+                <a class="preview-card__data-link" href="#">BioWare</a>
+              </span>
+            </li>
+            <li class="preview-card__list-item">
+              <span class="preview-card__label">Publisher:</span>
+              <span class="preview-card__data">
+                <a class="preview-card__data-link" href="#">Electronic Arts</a>
+              </span>
+            </li>
+            <li class="preview-card__list-item"
+              data-tooltip-html="90% of the 12,840 user reviews for this game are positive.">
+              <span class="preview-card__label">All Reviews:</span>
+              <span class="preview-card__data">
+                <span class="preview-card__positive">Very Positive </span>
+                <span>(12,840)</span>
+              </span>
+            </li>
+          </ul>
+
+          <!-- подвал карточки в виде перечня цен и скидки  -->
+          <div class="preview-card__footer">
+            <!-- кнопка добавить в корзину  -->
+            <button class="preview-card__button">Add to Cart</button>
+            <!-- цена  -->
+            <div class="preview-card__price">
+              <!-- процент скидки  -->
+              <span class="preview-card__sale">-17%</span>
+              <!-- цена до и после  -->
+              <p class="preview-card__cost">
+                <del>3499 pуб.</del>2904 pуб.</p>
+            </div>
+          </div> <!-- .preview-card__footer -->
+
+        </div> <!-- .preview-card__details -->
+
+      </article>
+
+      <article class="preview-card">
+        <!-- ссылка на отдельную страничку  -->
+        <a class="preview-card__link" href="#" aria-label="Подробнее о товаре" title="Подробнее о товаре"></a>
+        <!-- фоновая картинка карточки  -->
+        <img class="preview-card__bg" src="img/hero_capsule.jpg" alt="Картинка анонса" width="345" height="450">
+
+        <!-- появляющаяся шапка карточки - показываем при наведении на карточку  -->
+        <div class="preview-card__hover-image">
+          <video class="preview-card__video" loop="" preload="none" muted="muted">
+            <source src="video/1.webm" type="video/webm">
+          </video>
+        </div>
+
+        <!-- детальная информация о продукте  -->
+        <div class="preview-card__details">
+          <!-- заголовок карточки  -->
+          <h3 class="preview-card__title">Mass Effect™ Legendary Edition</h3>
+          <!-- перечень характеристик  -->
+          <ul class="preview-card__list">
+            <li class="preview-card__list-item">
+              <span class="preview-card__label">Developer:</span>
+              <span class="preview-card__data">
+                <a class="preview-card__data-link" href="#">BioWare</a>
+              </span>
+            </li>
+            <li class="preview-card__list-item">
+              <span class="preview-card__label">Publisher:</span>
+              <span class="preview-card__data">
+                <a class="preview-card__data-link" href="#">Electronic Arts</a>
+              </span>
+            </li>
+            <li class="preview-card__list-item"
+              data-tooltip-html="90% of the 12,840 user reviews for this game are positive.">
+              <span class="preview-card__label">All Reviews:</span>
+              <span class="preview-card__data">
+                <span class="preview-card__positive">Very Positive </span>
+                <span>(12,840)</span>
+              </span>
+            </li>
+          </ul>
+
+          <!-- подвал карточки в виде перечня цен и скидки  -->
+          <div class="preview-card__footer">
+            <!-- кнопка добавить в корзину  -->
+            <button class="preview-card__button">Add to Cart</button>
+            <!-- цена  -->
+            <div class="preview-card__price">
+              <!-- процент скидки  -->
+              <span class="preview-card__sale">-17%</span>
+              <!-- цена до и после  -->
+              <p class="preview-card__cost">
+                <del>3499 pуб.</del>2904 pуб.</p>
+            </div>
+          </div> <!-- .preview-card__footer -->
+
+        </div> <!-- .preview-card__details -->
+
+      </article>
+
+    </div>
+
+
+  </div>
+</body>
+
+</html>
