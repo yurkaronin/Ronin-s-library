@@ -1,0 +1,100 @@
+/* Задаём позиционирование для родительского элемента  */
+/* добавляем минимальную высоту для родительского контейнера  */
+.main {
+  position: relative;
+  min-height: 300px;
+}
+
+/* стили мобильного меню */
+.mobile-nav {
+  display: none;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #c9baba;
+  color: #fff;
+  z-index: 999999;
+  box-shadow: 0 0 16px 0 rgb(176 182 209 / 18%);
+  max-width: 100%;
+  width: 100%;
+}
+.mobile-nav__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 12px 30px;
+  max-width: 100%;
+}
+.mobile-nav__item {
+  color: #fff;
+  z-index: 999999;
+  text-align: center;
+}
+.mobile-nav__link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #81878f;
+  text-decoration-line: none;
+}
+
+.mobile-nav__icon {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 3px;
+  display: block;
+  margin-bottom: 5px;
+  max-width: 16px;
+  fill: #81878f;
+}
+
+.mobile-nav__label {
+  display: block;
+  font-size: 12px;
+}
+
+@media (max-width: 1000px) {
+  .mobile-nav {
+    display: block;
+  }
+}
+
+@media (max-width: 400px) {
+  .mobile-nav__icon {
+    margin-bottom: 2px;
+    max-width: 14px;
+  }
+  .mobile-nav__label {
+    font-size: 10px;
+  }
+}
+
+.mobile-nav__link:hover,
+.mobile-nav__link:active,
+.mobile-nav__link:focus {
+  color: #ff5248;
+}
+
+.mobile-nav__link:hover .mobile-nav__icon,
+.mobile-nav__link:active .mobile-nav__icon,
+.mobile-nav__link:focus .mobile-nav__icon {
+  fill: #ff5248;
+}
+
+
+/* Активное состояние пункта */
+.mobile-nav__link.active {
+  color: #ff5248;
+}
+
+.mobile-nav__link.active .mobile-nav__icon {
+  fill: #ff5248;
+}
+
+
