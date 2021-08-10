@@ -6,7 +6,6 @@
   background-color: #000000;
 }
 
-/* стилизация ссылки-обёртки для картинки  */
 .video-block__link {
   position: absolute;
   top: 0;
@@ -15,7 +14,6 @@
   height: 100%;
 }
 
-/* стилизация обложки под видео  */
 .video-block__media {
   position: absolute;
   top: 0;
@@ -25,8 +23,6 @@
   border: none;
 }
 
-
-/* стилизация кнопки запуска видео  */
 .video-block__button {
   position: absolute;
   top: 50%;
@@ -39,33 +35,28 @@
   background-color: transparent;
   transform: translate(-50%, -50%);
   cursor: pointer;
-/* прячем кнопку для показа только когда загружен js  */
+
   display: none;
 }
 
-/* стилизация иконки на кнопке ютуба (фон) */
 .video-block__icon-shape {
   fill: #212121;
   fill-opacity: 0.8;
 }
-/* стилизация иконки на кнопке ютуба (иконка) */
+
 .video-block__icon {
   fill: #ffffff;
 }
 
-/* отключение типового outline  */
 .video-block__button:focus {
   outline: none;
 }
 
-/* активное состояние для кнопки  */
 .video-block:hover .video-block__icon-shape,
 .video-block__button:focus .video-block__icon-shape {
   fill: #ff0000;
   fill-opacity: 1;
 }
-
-/* состояния кнопки для работы js */
 
 .video-block--enabled {
   cursor: pointer;
