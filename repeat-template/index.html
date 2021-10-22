@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Повторяющиеся элементы на странице со сменным текстом</title>
+</head>
+
+<body>
+  <main>
+    <section class="first-screen">
+      <div class="wrapper">
+
+        <div class="first-slider__wrapper swiper-wrapper" id="first-slider">
+          <!-- шаблон слайда. Если тебе нужно оживить - просто удали обёртку template и весь блок javascript-кода -->
+          <template id="first-slider-item">
+            <div class="first-slider__item swiper-slide">
+              <div class="first-slider__photo">
+                <img src="1.jpg" alt="фото слайдера" width="640" height="437" id="item-image">
+              </div>
+              <div class="first-slider__details">
+                <h3 class="first-slider__item-name" id="item-name">Выезд специалиста на дом</h3>
+                <p class="first-slider__text" id="item-text">Цените свое время</p>
+                <a href="#" class="first-slider__button button" id="item-link-text">Заказать выезд на дом</a>
+              </div>
+            </div>
+          </template>
+        </div>
+
+      </div><!-- .wrapper -->
+    </section>
+  </main>
+
+  <script>
+    // родитель и шаблон
+    const firstSlider = document.querySelector('#first-slider');
+    const firstSliderItem = document.querySelector('#first-slider-item');
+    // контент
+    let itemName = firstSliderItem.content.querySelector('#item-name');
+    let itemText = firstSliderItem.content.querySelector('#item-text');
+    let itemLinkText = firstSliderItem.content.querySelector('#item-link-text');
+    let itemImage = firstSliderItem.content.querySelector('#item-image');
+
+
+    // 1
+    itemName.textContent = 'Выезд специалиста на дом';
+    itemText.textContent = 'Цените свое время';
+    itemLinkText.textContent = 'Заказать выезд на дом';
+    itemImage.src = '1.jpg';
+    let clone = firstSliderItem.content.cloneNode(true);
+    firstSlider.append(clone);
+    // 2
+    itemName.textContent = 'Выезд специалиста на дом2';
+    itemText.textContent = 'Цените свое время2';
+    itemLinkText.textContent = 'Заказать выезд на дом2';
+    itemImage.src = '2.jpg';
+    clone = firstSliderItem.content.cloneNode(true);
+    firstSlider.append(clone);
+    // 3
+    itemName.textContent = 'Выезд специалиста на дом3';
+      itemText.textContent = 'Цените свое время3';
+      itemLinkText.textContent = 'Заказать выезд на дом3';
+      itemImage.src = '3.jpg';
+    clone = firstSliderItem.content.cloneNode(true);
+    firstSlider.append(clone);
+
+  </script>
+</body>
+
+</html>
