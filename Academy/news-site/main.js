@@ -11,10 +11,11 @@ if (menu) {
 
 // Раскладка статей
 let rowViewButton = document.querySelector('.row-view');
-let tileViewButton = document.querySelector('.tile-view');
-let newsList = document.querySelector('.news-list');
 
 if (rowViewButton) {
+  let tileViewButton = document.querySelector('.tile-view');
+  let newsList = document.querySelector('.news-list');
+
   rowViewButton.onclick = function () {
     rowViewButton.classList.add('view-checked');
     tileViewButton.classList.remove('view-checked');
@@ -31,9 +32,10 @@ if (rowViewButton) {
 
 // Кукис! Ом-ном-ном...
 let cookies = document.querySelector('.cookies-agreement');
-let cookiesButton = document.querySelector('.button');
 
 if (cookies) {
+  let cookiesButton = document.querySelector('.button');
+
   cookiesButton.onclick = function () {
     cookies.classList.add('cookies-agreement-closed');
   };
@@ -41,10 +43,11 @@ if (cookies) {
 
 
 // Переключение темы
-let page = document.querySelector('.page');
 let themeButton = document.querySelector('.theme-button');
 
 if (themeButton) {
+  let page = document.querySelector('.page');
+
   themeButton.onclick = function () {
     page.classList.toggle('light-theme');
     page.classList.toggle('dark-theme');
@@ -52,15 +55,57 @@ if (themeButton) {
 }
 
 // форма
-let message = document.querySelector('.subscription-message');
-
 let form = document.querySelector('.subscription');
-let email = document.querySelector('.subscription-email');
+
 if (form) {
+  let message = document.querySelector('.subscription-message');
+  let email = document.querySelector('.subscription-email');
+
   form.onsubmit = function (evt) {
     // Инструкция ниже отменяет отправку данных
     evt.preventDefault();
     message.textContent = 'Адрес ' + email.value + ' добавлен в список получателей рассылки.';
   };
 }
+
+// лайк
+let heart = document.querySelector('.heart');
+
+if (heart) {
+  let likesNumber = document.querySelector('.likes-number');
+  const toggle = document.querySelector('[aria-pressed]');
+
+  heart.onclick = function () {
+    if (heart.classList.contains('added')) {
+      likesNumber.textContent--;
+    } else {
+      likesNumber.textContent++;
+    }
+
+    heart.classList.toggle('added');
+  };
+
+  toggle.addEventListener('click', (e) => {
+    let pressed = e.target.getAttribute('aria-pressed') === 'true';
+    e.target.setAttribute('aria-pressed', String(!pressed));
+  });
+}
+
+// комментарии
+let commentForm = document.querySelector('.comment-form');
+if (commentForm) {
+  let commentList = document.querySelector('.comment-list');
+  let commentField = document.querySelector('.comment-field');
+
+  commentForm.onsubmit = function (evt) {
+    evt.preventDefault();
+
+    let newComment = document.createElement('li');
+    newComment.classList.add('user-comment');
+    newComment.textContent = commentField.value;
+    commentField.value = '';
+    commentList.append(newComment);
+  };
+}
+
 
