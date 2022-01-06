@@ -2,10 +2,10 @@
 let menu = document.querySelector('.menu');
 
 if (menu) {
-  menu.onclick = function () {
-    menu.classList.toggle('menu-open');
-    menu.classList.toggle('menu-close');
-  };
+    menu.onclick = function () {
+        menu.classList.toggle('menu-open');
+        menu.classList.toggle('menu-close');
+    };
 }
 
 
@@ -13,20 +13,20 @@ if (menu) {
 let rowViewButton = document.querySelector('.row-view');
 
 if (rowViewButton) {
-  let tileViewButton = document.querySelector('.tile-view');
-  let newsList = document.querySelector('.news-list');
+    let tileViewButton = document.querySelector('.tile-view');
+    let newsList = document.querySelector('.news-list');
 
-  rowViewButton.onclick = function () {
-    rowViewButton.classList.add('view-checked');
-    tileViewButton.classList.remove('view-checked');
-    newsList.classList.remove('list-tiles-view');
-  };
+    rowViewButton.onclick = function () {
+        rowViewButton.classList.add('view-checked');
+        tileViewButton.classList.remove('view-checked');
+        newsList.classList.remove('list-tiles-view');
+    };
 
-  tileViewButton.onclick = function () {
-    rowViewButton.classList.remove('view-checked');
-    tileViewButton.classList.add('view-checked');
-    newsList.classList.add('list-tiles-view');
-  };
+    tileViewButton.onclick = function () {
+        rowViewButton.classList.remove('view-checked');
+        tileViewButton.classList.add('view-checked');
+        newsList.classList.add('list-tiles-view');
+    };
 }
 
 
@@ -34,11 +34,11 @@ if (rowViewButton) {
 let cookies = document.querySelector('.cookies-agreement');
 
 if (cookies) {
-  let cookiesButton = document.querySelector('.button');
+    let cookiesButton = document.querySelector('.button');
 
-  cookiesButton.onclick = function () {
-    cookies.classList.add('cookies-agreement-closed');
-  };
+    cookiesButton.onclick = function () {
+        cookies.classList.add('cookies-agreement-closed');
+    };
 }
 
 
@@ -46,66 +46,87 @@ if (cookies) {
 let themeButton = document.querySelector('.theme-button');
 
 if (themeButton) {
-  let page = document.querySelector('.page');
+    let page = document.querySelector('.page');
 
-  themeButton.onclick = function () {
-    page.classList.toggle('light-theme');
-    page.classList.toggle('dark-theme');
-  };
+    themeButton.onclick = function () {
+        page.classList.toggle('light-theme');
+        page.classList.toggle('dark-theme');
+    };
 }
 
 // форма
 let form = document.querySelector('.subscription');
 
 if (form) {
-  let message = document.querySelector('.subscription-message');
-  let email = document.querySelector('.subscription-email');
+    let message = document.querySelector('.subscription-message');
+    let email = document.querySelector('.subscription-email');
 
-  form.onsubmit = function (evt) {
-    // Инструкция ниже отменяет отправку данных
-    evt.preventDefault();
-    message.textContent = 'Адрес ' + email.value + ' добавлен в список получателей рассылки.';
-  };
+    form.onsubmit = function (evt) {
+        // Инструкция ниже отменяет отправку данных
+        evt.preventDefault();
+        message.textContent = 'Адрес ' + email.value + ' добавлен в список получателей рассылки.';
+    };
 }
 
 // лайк
 let heart = document.querySelector('.heart');
 
 if (heart) {
-  let likesNumber = document.querySelector('.likes-number');
-  const toggle = document.querySelector('[aria-pressed]');
+    let likesNumber = document.querySelector('.likes-number');
+    const toggle = document.querySelector('[aria-pressed]');
 
-  heart.onclick = function () {
-    if (heart.classList.contains('added')) {
-      likesNumber.textContent--;
-    } else {
-      likesNumber.textContent++;
-    }
+    heart.onclick = function () {
+        if (heart.classList.contains('added')) {
+            likesNumber.textContent--;
+        } else {
+            likesNumber.textContent++;
+        }
 
-    heart.classList.toggle('added');
-  };
+        heart.classList.toggle('added');
+    };
 
-  toggle.addEventListener('click', (e) => {
-    let pressed = e.target.getAttribute('aria-pressed') === 'true';
-    e.target.setAttribute('aria-pressed', String(!pressed));
-  });
+    toggle.addEventListener('click', (e) => {
+        let pressed = e.target.getAttribute('aria-pressed') === 'true';
+        e.target.setAttribute('aria-pressed', String(!pressed));
+    });
 }
 
 // комментарии
 let commentForm = document.querySelector('.comment-form');
 if (commentForm) {
-  let commentList = document.querySelector('.comment-list');
-  let commentField = document.querySelector('.comment-field');
+    let commentList = document.querySelector('.comment-list');
+    let commentField = document.querySelector('.comment-field');
 
-  commentForm.onsubmit = function (evt) {
-    evt.preventDefault();
+    commentForm.onsubmit = function (evt) {
+        evt.preventDefault();
 
-    let newComment = document.createElement('li');
-    newComment.classList.add('user-comment');
-    newComment.textContent = commentField.value;
-    commentField.value = '';
-    commentList.append(newComment);
-  };
+        let newComment = document.createElement('li');
+        newComment.classList.add('user-comment');
+        newComment.textContent = commentField.value;
+        commentField.value = '';
+        commentList.append(newComment);
+    };
 }
+
+// подсказки
+let tooltipButtons = document.querySelectorAll('.tooltip-button');
+let closeButton = document.querySelector('.close-button');
+let tooltip = document.querySelector('.tooltip');
+let tooltipText = document.querySelector('.tooltip-text');
+if (closeButton) {
+
+    closeButton.onclick = function () {
+        tooltip.classList.remove('opened');
+    };
+
+    for (let tooltipButton of tooltipButtons) {
+        tooltipButton.onclick = function () {
+            tooltipText.textContent = tooltipButton.dataset.tooltipText;
+            tooltip.classList.add('opened');
+        };
+    }
+}
+
+
 
 

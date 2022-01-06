@@ -1,532 +1,594 @@
 * {
-  box-sizing: border-box
+    box-sizing: border-box
 }
 
 .visually-hidden:not(:focus):not(:active),
 input[type=checkbox].visually-hidden,
 input[type=radio].visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  border: 0;
-  padding: 0;
-  white-space: nowrap;
-  clip-path: inset(100%);
-  clip: rect(0 0 0 0);
-  overflow: hidden
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden
 }
 
 body {
-  font-family: "Verdana", "Tahoma", sans-serif;
-  font-size: 12px;
-  line-height: 16px
+    font-family: "Verdana", "Tahoma", sans-serif;
+    font-size: 12px;
+    line-height: 16px
 }
 
 a {
-  font: inherit;
-  color: inherit;
-  text-decoration: none
+    font: inherit;
+    color: inherit;
+    text-decoration: none
 }
 
 .container {
-  display: flex;
-  position: relative;
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 0 10px
+    display: flex;
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 10px
 }
 
 .page-header .container {
-  min-height: 42px
+    min-height: 42px
 }
 
 .inner-heading {
-  margin: 20px 0 4px;
-  line-height: 32px
+    margin: 20px 0 4px;
+    line-height: 32px
 }
 
 .header-link,
 .header-logo {
-  display: flex;
-  margin-right: auto;
-  align-items: center
+    display: flex;
+    margin-right: auto;
+    align-items: center
 }
 
 .header-link,
 .new-block h3 {
-  font-size: 14px;
-  line-height: 20px
+    font-size: 14px;
+    line-height: 20px
 }
 
 .header-link::before {
-  content: "";
-  width: 10px;
-  height: 18px;
-  padding-right: 8px;
-  display: inline-block;
-  vertical-align: text-bottom
+    content: "";
+    width: 10px;
+    height: 18px;
+    padding-right: 8px;
+    display: inline-block;
+    vertical-align: text-bottom
 }
 
 .theme-button {
-  position: relative;
-  margin: auto 0;
-  padding: 7px 16px 7px 36px;
-  font-size: 12px;
-  border-radius: 2px;
-  background-color: transparent
+    position: relative;
+    margin: auto 0;
+    padding: 7px 16px 7px 36px;
+    font-size: 12px;
+    border-radius: 2px;
+    background-color: transparent
 }
 
 .theme-button::before {
-  position: absolute;
-  content: "";
-  width: 15px;
-  height: 15px;
-  top: 7px;
-  left: 12px
+    position: absolute;
+    content: "";
+    width: 15px;
+    height: 15px;
+    top: 7px;
+    left: 12px
 }
 
 .main-menu a:active,
 .menu-close:active,
 .menu-open:active,
 .theme-button:active {
-  opacity: .8
+    opacity: .8
 }
 
 .menu {
-  position: relative;
-  margin-right: -10px;
-  margin-left: 24px;
-  width: 42px;
-  height: 42px;
-  font-size: 0;
-  border: 0;
-  cursor: pointer;
-  background-repeat: no-repeat;
-  background-position: center
+    position: relative;
+    margin-right: -10px;
+    margin-left: 24px;
+    width: 42px;
+    height: 42px;
+    font-size: 0;
+    border: 0;
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-position: center
 }
 
 .menu-close {
-  background-image: url(img/menu-close.svg)
+    background-image: url(img/menu-close.svg)
 }
 
 .main-menu {
-  position: absolute;
-  z-index: 1;
-  padding: 0;
-  top: 42px;
-  right: 0
+    position: absolute;
+    z-index: 1;
+    padding: 0;
+    top: 42px;
+    right: 0
 }
 
-.menu-open+.main-menu {
-  display: none
+.menu-open + .main-menu {
+    display: none
 }
 
 .main-menu ul {
-  list-style: none;
-  margin: 0;
-  padding: 10px 0
+    list-style: none;
+    margin: 0;
+    padding: 10px 0
 }
 
 .main-menu a {
-  display: block;
-  padding: 10px 56px 10px 20px
+    display: block;
+    padding: 10px 56px 10px 20px
 }
 
 .index-main,
 .inner-main {
-  padding: 0;
-  min-height: calc(100vh - 84px)
+    padding: 0;
+    min-height: calc(100vh - 84px)
 }
 
 .index-main .container,
 .inner-main .container {
-  flex-direction: column
+    flex-direction: column
 }
 
 .news-view {
-  display: flex;
-  margin: 20px 0
+    display: flex;
+    margin: 20px 0
 }
 
 .news-view button {
-  position: relative;
-  display: block;
-  margin-right: 10px;
-  padding: 7px 16px 7px 34px;
-  border-radius: 16px;
-  background-color: transparent
+    position: relative;
+    display: block;
+    margin-right: 10px;
+    padding: 7px 16px 7px 34px;
+    border-radius: 16px;
+    background-color: transparent
 }
 
 .row-view::before,
 .tile-view::before {
-  position: absolute;
-  content: "";
-  top: 9px;
-  left: 16px;
-  width: 12px;
-  height: 10px
+    position: absolute;
+    content: "";
+    top: 9px;
+    left: 16px;
+    width: 12px;
+    height: 10px
 }
 
 .tile-view::before {
-  width: 10px
+    width: 10px
 }
 
 .news-list {
-  margin-bottom: 20px
+    margin-bottom: 20px
 }
 
 .news-list-heading {
-  flex-basis: 100%
+    flex-basis: 100%
 }
 
 .new-block {
-  display: flex;
-  margin-bottom: 10px;
-  padding: 12px 12px 16px
+    display: flex;
+    margin-bottom: 10px;
+    padding: 12px 12px 16px
 }
 
 .new-block img {
-  flex-shrink: 0;
-  margin-right: 12px;
-  width: 56px;
-  height: 56px;
-  object-fit: cover
+    flex-shrink: 0;
+    margin-right: 12px;
+    width: 56px;
+    height: 56px;
+    object-fit: cover
 }
 
 .new-block h3 {
-  margin: 0 0 4px
+    margin: 0 0 4px
 }
 
 .new-block p {
-  margin: 0 0 8px
+    margin: 0 0 8px
 }
 
 .new-block time,
 body {
-  margin: 0
+    margin: 0
 }
 
 .list-tiles-view.news-list {
-  display: flex;
-  flex-wrap: wrap;
-  margin-bottom: 20px;
-  margin-right: -10px
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    margin-right: -10px
 }
 
 .list-tiles-view .new-block {
-  flex-basis: calc(50% - 10px);
-  margin-right: 10px;
-  margin-bottom: 15px;
-  flex-direction: column
+    flex-basis: calc(50% - 10px);
+    margin-right: 10px;
+    margin-bottom: 15px;
+    flex-direction: column
 }
 
 .list-tiles-view .new-block img {
-  position: relative;
-  width: calc(100% + 24px);
-  top: -12px;
-  left: -12px;
-  height: 146px;
-  margin-right: 0
+    position: relative;
+    width: calc(100% + 24px);
+    top: -12px;
+    left: -12px;
+    height: 146px;
+    margin-right: 0
 }
 
 .list-tiles-view .new-block .new-block-text {
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1
 }
 
 .list-tiles-view .new-block time {
-  margin-top: auto;
+    margin-top: auto;
 }
 
 .cookies-agreement {
-  z-index: 1;
-  display: flex;
-  flex-direction: column;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  padding: 10px 20px 20px
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 10px 20px 20px
 }
 
 .cookies-agreement .button {
-  margin-left: auto
+    margin-left: auto
 }
 
 .cookies-agreement-closed {
-  display: none
+    display: none
 }
 
 .button {
-  font-size: 12px;
-  border: 0;
-  padding: 7px 16px;
-  border-radius: 2px
+    font-size: 12px;
+    border: 0;
+    padding: 7px 16px;
+    border-radius: 2px
 }
 
 .button:active {
-  opacity: .8
+    opacity: .8
 }
 
 .page-footer {
-  margin-top: auto;
-  min-height: 42px
+    margin-top: auto;
+    min-height: 42px
 }
 
 .footer-logo {
-  margin-left: auto;
-  display: block;
-  padding: 6px 0 3px
+    margin-left: auto;
+    display: block;
+    padding: 6px 0 3px
 }
 
 .page-footer p {
-  margin: auto 0
+    margin: auto 0
 }
 
 .subscription {
-  display: flex;
-  margin-bottom: 12px;
-  padding: 20px 12px
+    display: flex;
+    margin-bottom: 12px;
+    padding: 20px 12px
 }
 
 .subscription-message {
-  position: relative;
-  margin-left: 24px;
-  padding: 12px 32px 16px 40px;
-  border-radius: 0 32px;
-  font-size: 18px;
-  line-height: 24px
+    position: relative;
+    margin-left: 24px;
+    padding: 12px 32px 16px 40px;
+    border-radius: 0 32px;
+    font-size: 18px;
+    line-height: 24px
 }
 
 .subscription-message::before {
-  position: absolute;
-  content: "";
-  width: 48px;
-  height: 48px;
-  top: 0;
-  left: -24px
+    position: absolute;
+    content: "";
+    width: 48px;
+    height: 48px;
+    top: 0;
+    left: -24px
 }
 
 .subscription-inner {
-  position: relative;
-  flex-grow: 1;
-  margin-right: 10px
+    position: relative;
+    flex-grow: 1;
+    margin-right: 10px
 }
 
 .subscription-label {
-  position: absolute;
-  top: -12px;
-  font-size: 10px;
-  line-height: 14px
+    position: absolute;
+    top: -12px;
+    font-size: 10px;
+    line-height: 14px
 }
 
 .subscription-email {
-  width: 100%;
-  height: 30px;
-  border: 0;
-  background-color: transparent;
-  font: inherit;
-  font-size: 14px;
-  line-height: 30px
+    width: 100%;
+    height: 30px;
+    border: 0;
+    background-color: transparent;
+    font: inherit;
+    font-size: 14px;
+    line-height: 30px
 }
 
 .subscription-email::placeholder {
-  color: #aaa;
-  font: inherit;
-  font-size: 14px;
-  font-style: italic
+    color: #aaa;
+    font: inherit;
+    font-size: 14px;
+    font-style: italic
 }
 
 .subscription-button {
-  flex-shrink: 0
+    flex-shrink: 0
 }
 
 .dark-theme .header-logo {
-  filter: invert(1) hue-rotate(180deg) brightness(2)
+    filter: invert(1) hue-rotate(180deg) brightness(2)
 }
 
 /* custom style  */
 .custom-linl-more {
-  display: inline-block;
-  border: 1px solid;
-  padding: 5px 10px;
-  max-width: max-content;
+    display: inline-block;
+    border: 1px solid;
+    padding: 5px 10px;
+    max-width: max-content;
 }
 
 .dark-theme .custom-linl-more {
-  border-color: #ffffff;
+    border-color: #ffffff;
 }
 
 .light-theme .custom-linl-more {
-border-color: #000000;
+    border-color: #000000;
 }
 
 .new-block time {
-  margin: 10px 0;
+    margin: 10px 0;
 }
 
 /* отдельная страница со статьёй  */
 .inner-news {
-  padding: 0;
-  min-height: calc(100vh - 84px);
+    padding: 0;
+    min-height: calc(100vh - 84px);
 }
 
 .index-main .container,
 .inner-main .container,
 .inner-news .container {
-  flex-direction: column;
+    flex-direction: column;
 }
 
 .inner-news .inner-heading {
-  margin-bottom: 20px;
-  font-size: 24px;
+    margin-bottom: 20px;
+    font-size: 24px;
 }
 
 .news-full {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 24px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 24px;
 }
 
 .news-full img {
-  margin-bottom: 4px;
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
+    margin-bottom: 4px;
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
 }
 
 .news-full .news-stats {
-  display: flex;
-  justify-content: space-between;
+    display: flex;
+    justify-content: space-between;
 }
 
 .heart .likes-number {
-  margin-left: 24px;
-  line-height: 14px;
+    margin-left: 24px;
+    line-height: 14px;
 }
 
 .news-full .heart {
-  padding: 12px 10px;
-  min-width: 40px;
-  min-height: 34px;
-  font-family: inherit;
-  font-weight: bold;
-  font-size: 16px;
-  border: none;
-  background-color: transparent;
-  background-repeat: no-repeat;
-  background-position: 12px;
-  cursor: pointer;
+    padding: 12px 10px;
+    min-width: 40px;
+    min-height: 34px;
+    font-family: inherit;
+    font-weight: bold;
+    font-size: 16px;
+    border: none;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: 12px;
+    cursor: pointer;
 }
 
 .page .heart:focus,
 .page .heart:hover {
-  opacity: 1;
+    opacity: 1;
 }
 
 .news-full time {
-  margin-top: 14px;
-  margin-right: 12px;
-  margin-bottom: 8px;
-  margin-left: 0;
+    margin-top: 14px;
+    margin-right: 12px;
+    margin-bottom: 8px;
+    margin-left: 0;
 }
 
 .news-full p {
-  margin-top: 0;
-  margin-right: 12px;
-  margin-bottom: 16px;
-  margin-left: 12px;
-  font-size: 14px;
-  line-height: 24px;
+    margin-top: 0;
+    margin-right: 12px;
+    margin-bottom: 16px;
+    margin-left: 12px;
+    font-size: 14px;
+    line-height: 24px;
 }
 
 /* блок комментариев  */
 .comment-feed h2 {
-  margin-top: 0;
-  margin-bottom: 12px;
+    margin-top: 0;
+    margin-bottom: 12px;
 }
 
 .comment-list {
-  margin-top: 0;
-  margin-right: 0;
-  margin-bottom: 12px;
-  margin-left: 0;
-  padding: 0;
-  list-style: none;
-  counter-reset: comments;
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 12px;
+    margin-left: 0;
+    padding: 0;
+    list-style: none;
+    counter-reset: comments;
 }
 
 .comment-list li {
-  margin-bottom: 6px;
-  padding: 10px 12px;
-  min-height: 36px;
-  font-size: 14px;
-  line-height: 24px;
+    margin-bottom: 6px;
+    padding: 10px 12px;
+    min-height: 36px;
+    font-size: 14px;
+    line-height: 24px;
 }
 
 .comment-list .user-comment {
-  position: relative;
-  display: flex;
+    position: relative;
+    display: flex;
 }
 
 .comment-list .user-comment::before {
-  counter-increment: comments;
-  content: "#"counter(comments);
-  padding-right: 12px;
-  margin-right: 12px;
-  border-right: 1px solid;
-  font-weight: bold;
+    counter-increment: comments;
+    content: "#" counter(comments);
+    padding-right: 12px;
+    margin-right: 12px;
+    border-right: 1px solid;
+    font-weight: bold;
 }
 
 .comment-list .user-comment::after {
-  position: absolute;
-  content: "";
-  width: 0;
-  height: 0;
-  bottom: 0;
-  left: -8px;
-  border: 4px solid;
-  border-left-color: transparent;
-  border-top-color: transparent;
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 0;
+    bottom: 0;
+    left: -8px;
+    border: 4px solid;
+    border-left-color: transparent;
+    border-top-color: transparent;
 }
 
 .comment-form {
-  display: flex;
-  margin-bottom: 30px;
-  padding: 20px 12px;
+    display: flex;
+    margin-bottom: 30px;
+    padding: 20px 12px;
 }
 
 .comment-inner {
-  position: relative;
-  flex-grow: 1;
-  margin-right: 10px;
+    position: relative;
+    flex-grow: 1;
+    margin-right: 10px;
 }
 
 .comment-label {
-  position: absolute;
-  top: -16px;
-  left: -9px;
-  padding: 4px 8px;
-  font-size: 10px;
-  line-height: 14px;
+    position: absolute;
+    top: -16px;
+    left: -9px;
+    padding: 4px 8px;
+    font-size: 10px;
+    line-height: 14px;
 }
 
 .comment-field {
-  width: 100%;
-  height: 30px;
-  padding: 0 10px;
-  border: none;
-  background-color: transparent;
-  font: inherit;
-  font-size: 14px;
-  line-height: 30px;
+    width: 100%;
+    height: 30px;
+    padding: 0 10px;
+    border: none;
+    background-color: transparent;
+    font: inherit;
+    font-size: 14px;
+    line-height: 30px;
 }
 
 .comment-feed__button {
-  font-size: 12px;
-  border: 0;
-  padding: 7px 16px;
-  border-radius: 2px;
-  cursor: pointer;
+    font-size: 12px;
+    border: 0;
+    padding: 7px 16px;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+/*подсказки */
+.tooltip-button {
+    cursor: pointer;
+    position: relative;
+    padding: 1px 8px;
+    border: none;
+    color: inherit;
+    font: inherit;
+}
+
+.tooltip-button::after {
+    position: absolute;
+    content: "";
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    border: 4px solid;
+    border-left-color: transparent;
+    border-bottom-color: transparent;
+}
+
+.tooltip {
+    z-index: 2;
+    display: none;
+    flex-direction: row-reverse;
+    position: fixed;
+    max-width: 256px;
+    right: 0;
+    top: 160px;
+    border-radius: 8px 0 0 8px;
+}
+
+.opened {
+    display: flex;
+    animation: tooltip-opener 150ms;
+}
+
+.tooltip-text {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+.close-button {
+    min-height: 64px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    margin: 0;
+    padding: 0;
+    border-radius: 8px 0 0 8px;
+}
+
+.close-button span {
+    display: inline-block;
+    vertical-align: middle;
+    transform: rotate(
+            -90deg);
 }

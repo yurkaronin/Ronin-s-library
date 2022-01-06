@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" href="favicon.ico" type="image/x-icon"/>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="main.css">
+    <title>Дроновирус</title>
+</head>
+<body class="page light-theme">
+<header class="page-header">
+    <div class="container">
+        <a href="index.html" class="header-logo">
+            <img src="img/main-logo.svg" width="67" height="29" alt="Логотип портала FlashNews!">
+        </a>
+        <button class="theme-button" type="button">Изменить тему</button>
+        <button class="menu menu-open" type="button">Меню</button>
+        <nav class="main-menu">
+            <ul>
+                <li>
+                    <a href="#">Колонка редактора</a>
+                </li>
+                <li>
+                    <a href="#">Контакты</a>
+                </li>
+                <li>
+                    <a href="subscribe.html">Подписка</a>
+                </li>
+                <li>
+                    <a href="article-2.html">Статья с подсказками</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main class="inner-news">
+
+    <div class="tooltip">
+        <span class="tooltip-text"></span>
+        <button class="button close-button" type="button"><span>Закрыть</span></button>
+    </div>
+
+    <article class="container">
+        <h1 class="inner-heading">Дроновирус</h1>
+        <div class="news-full">
+            <img src="img/drone.jpg" alt="Маленький дрон">
+            <div class="news-stats">
+                <button class="heart" type="button" aria-pressed=""><span class="likes-number">28</span></button>
+                <time datetime="2019-12-22">22 декабря 2019</time>
+            </div>
+            <p>Конструкторы лаборатории
+                <button class="tooltip-button" type="button" data-tooltip-text="так себе лаборатория">DogDrones.inc
+                </button>
+                заверили, что их дроны не могут быть переносчиками опасных вирусов, так как это не заложено в их
+                программу.
+                <button class="tooltip-button" type="button" data-tooltip-text="но это не точно, - прим. юриста">
+                    Возможно
+                </button>
+                , истинная причина в том, что дроны лаборатории не способны переносить вообще ничего.
+            </p>
+        </div>
+    </article>
+
+    <section class="comment-feed container">
+        <h2>Комментарии</h2>
+        <ol class="comment-list">
+            <li class="user-comment">Да ну, бред какой-то…</li>
+        </ol>
+        <form action="" method="post" class="comment-form">
+            <div class="comment-inner">
+                <label class="comment-label" for="comment-input">ваш комментарий</label>
+                <input type="text" class="comment-field" placeholder="Комментарий" required="" id="comment-input">
+            </div>
+            <button class="button comment-feed__button" type="submit">Отправить</button>
+        </form>
+    </section>
+</main>
+
+<aside class="cookies-agreement cookies-agreement-closed">
+    <p>Пока вы находитесь на нашем сайте и читаете новости, мы используем ваши кукис. Очень надеемся, что вы не против.
+    </p>
+    <button class="button" type="button">Окей, продолжайте</button>
+</aside>
+
+<footer class="page-footer">
+    <div class="container">
+        <p>© FlashNews!</p>
+
+        <a class="footer-logo">
+            <img src="img/white-logo.svg" alt="Логотип портала FlashNews!">
+        </a>
+    </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
