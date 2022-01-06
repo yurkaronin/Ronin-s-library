@@ -242,6 +242,16 @@
   color: #ffffff;
 }
 
+.light-theme .subscription, .light-theme .comment-form {
+  background-color: #ffffff;
+  box-shadow: 0 1px 4px rgb(0 0 0 / 20%);
+}
+
+.light-theme .subscription-email, .light-theme .comment-field {
+  border: 1px solid #eae9f2;
+  color: #333333;
+}
+
 /* Тёмная тема */
 .dark-theme {
   color: #f2f2f2;
@@ -480,4 +490,14 @@
 .dark-theme .button {
   background-color: #9484f2;
   color: #17161a;
+}
+
+.dark-theme .subscription, .dark-theme .comment-form {
+  background-color: #2a2930;
+  box-shadow: 0 1px 4px rgb(0 0 0 / 60%);
+}
+
+.dark-theme .subscription-email, .dark-theme .comment-field {
+  border: 1px solid #473c8d;
+  color: #f2f2f2;
 }
