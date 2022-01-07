@@ -147,12 +147,71 @@ if (closeButton) {
         tooltip.classList.remove('opened');
     };
 
-    for (let tooltipButton of tooltipButtons) {
-        tooltipButton.onclick = function () {
-            tooltipText.textContent = tooltipButton.dataset.tooltipText;
-            tooltip.classList.add('opened');
-        };
+  for (let tooltipButton of tooltipButtons) {
+    tooltipButton.onclick = function () {
+      tooltipText.textContent = tooltipButton.dataset.tooltipText;
+      tooltip.classList.add('opened');
+    };
+  }
+}
+
+// кнопка прокрутки страницы наверх
+let upButton = document.querySelector('.up-button');
+if (upButton) {
+  window.onscroll = function () {
+    if (window.pageYOffset > 200) {
+      upButton.classList.add('shown');
+    } else {
+      upButton.classList.remove('shown');
     }
+  };
+
+
+  upButton.onclick = function () {
+    window.scrollTo(0, 0);
+  };
+}
+
+// фильтр анонсов статей
+let articles = document.querySelectorAll('.new-block');
+let filter = document.querySelector('.filter');
+if (filter) {
+  filter.onchange = function () {
+    for (let article of articles) {
+      if (article.dataset.category !== filter.value && filter.value !== 'all') {
+        article.classList.add('hidden');
+      } else {
+        article.classList.remove('hidden');
+      }
+    }
+  };
+}
+
+// оценить сайт
+let websiteScores = document.querySelectorAll('.review');
+if (websiteScores) {
+  let submitButton = document.querySelector('.submit-button');
+  let errorMessage = document.querySelector('.error');
+
+
+  for (let websiteScore of websiteScores) {
+    websiteScore.onchange = function () {
+
+      if (websiteScore.dataset.evaluation == 'bad') {
+        submitButton.disabled = true;
+        errorMessage.classList.add('shown');
+        // то блокируем кнопку
+        // и добавляем элементу errorMessage класс
+
+      } else {
+        submitButton.disabled = false;
+        errorMessage.classList.remove('shown');
+        // разблокировать кнопку
+        // и удаляем у элемента errorMessage класс
+      }
+
+    };
+  }
 }
 
 

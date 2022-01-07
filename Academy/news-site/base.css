@@ -639,3 +639,168 @@ body {
 .submit-button:disabled {
     opacity: 0.25;
 }
+
+.news-tag {
+    padding: 4px 8px;
+    margin: 0 auto 0 0;
+    border-radius: 12px;
+}
+
+.subscription-link {
+    position: relative;
+    padding-top: 8px;
+    padding-right: 2px;
+    padding-bottom: 6px;
+    padding-left: 26px;
+    margin: auto 4%;
+}
+
+.subscription-link::before {
+    position: absolute;
+    content: "";
+    width: 18px;
+    height: 12px;
+    top: 9px;
+    left: 2px;
+}
+
+/*Кнопка наверх*/
+.up-button {
+    position: fixed;
+    z-index: 1;
+    padding: 0;
+    bottom: 75px;
+    right: 20px;
+    width: 64px;
+    height: 64px;
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+    vertical-align: middle;
+    border: 5px solid;
+    border-radius: 50%;
+    display: none;
+    cursor: pointer;
+}
+
+.shown {
+    display: inline-block;
+}
+
+/*Список категорий фильтра*/
+.filter {
+    display: flex;
+    padding: 7px 22px 7px 12px;
+    box-sizing: border-box;
+    margin: 0 0 0 auto;
+    font-size: inherit;
+    border: none;
+    border-radius: 2px;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background-repeat: no-repeat, repeat;
+    background-position: right 8px top 50%;
+    background-size: 8px auto;
+}
+
+/*фильтрация анонсов*/
+.hidden {
+    display: none;
+}
+
+/*опрос посетителя*/
+/* Опрос */
+
+.poll {
+    position: relative;
+    margin-left: 24px;
+    margin-top: 20px;
+    padding-top: 12px;
+    padding-right: 32px;
+    padding-left: 32px;
+    padding-bottom: 32px;
+    border-radius: 0 32px;
+    font-size: 18px;
+    line-height: 24px;
+    font-size: 14px;
+    line-height: 16px;
+}
+
+.poll::before {
+    position: absolute;
+    content: "";
+    width: 48px;
+    height: 48px;
+    top: 0;
+    left: -24px;
+}
+
+fieldset {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+legend {
+    margin: 0;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 24px;
+}
+
+.submit-button {
+    padding: 7px 16px;
+    width: 165px;
+    height: 30px;
+    border-radius: 2px;
+}
+
+.submit-button:disabled {
+    opacity: 0.25;
+}
+
+.error {
+    display: none;
+    margin-left: -32px;
+    margin-right: -32px;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    background-color: #F05B29;
+    font-size: 12px;
+}
+
+.error::before {
+    content: "";
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+}
+
+.poll-option {
+    margin-bottom: 16px;
+}
+
+
+.review + label::before {
+    content: "";
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-bottom: -2px;
+    margin-right: 10px;
+    background-size: 16px 16px;
+    background-repeat: no-repeat;
+}
+
+.review:focus + label {
+    outline: 5px solid #4d90fe;
+}
+
+.shown {
+    display: flex;
+}
