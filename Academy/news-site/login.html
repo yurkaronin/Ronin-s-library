@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link rel="icon" href="favicon.ico" type="image/x-icon"/>
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+  
+  <link rel="stylesheet" href="base.css">
+  <link rel="stylesheet" href="main.css">
+  <title>FlashNews! Регистрация</title>
+</head>
+<body class="page light-theme">
+<header class="page-header">
+  <div class="container">
+	<a href="index.html" class="header-logo">
+	  <img src="img/main-logo.svg" width="67" height="29" alt="Логотип портала FlashNews!">
+	</a>
+	<a href="subscribe.html" class="subscription-link">Подписка</a>
+	<button class="theme-button" type="button">Изменить тему</button>
+	<button class="menu menu-open" type="button">Меню</button>
+	<nav class="main-menu">
+	  <ul>
+		<li>
+		  <a href="#">Колонка редактора</a>
+		</li>
+		<li>
+		  <a href="login.html">Регистрация</a>
+		</li>
+		<li>
+		  <a href="article-2.html">Статья с подсказками</a>
+		</li>
+		<li>
+		  <a href="article-3.html">Ограничение для комментариев</a>
+		</li>
+	  </ul>
+	</nav>
+  </div>
+</header>
+
+<main class="index-main">
+  <div class="container">
+	<h1 class="inner-heading">Регистрация</h1>
+	<form class="reg-form" action="https://echo.htmlacademy.ru/courses" method="post">
+	  <label class="reg-label" for="reg-name">логин</label>
+	  <input class="name" type="text" value="Опознанный Енот" id="reg-name" name="reg-name" placeholder="Опознанный Енот" required>
+	  <label class="reg-label" for="reg-pass">пароль</label>
+	  <input class="password" type="password" id="reg-pass" name="reg-pass" placeholder="**********" required >
+	  <div class="security">
+		<div class="security-bar"></div>
+	  </div>
+	  <input class="show-password visually-hidden" type="checkbox" id="show-pass">
+	  <label class="checkbox-label" for="show-pass">Показать пароль</label>
+	  <button class="button" type="submit">Зарегистрироваться</button>
+	</form>
+  </div>
+</main>
+
+<aside class="cookies-agreement cookies-agreement-closed">
+  <p>Пока вы находитесь на нашем сайте и читаете новости, мы используем ваши кукис. Очень надеемся, что вы не против.
+  </p>
+  <button class="button" type="button">Окей, продолжайте</button>
+</aside>
+
+<footer class="page-footer">
+  <div class="container">
+	<p>© FlashNews!</p>
+	
+	<a class="footer-logo">
+	  <img src="img/white-logo.svg" alt="Логотип портала FlashNews!">
+	</a>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
