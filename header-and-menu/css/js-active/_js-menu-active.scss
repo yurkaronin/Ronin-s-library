@@ -1,0 +1,17 @@
+.js-menu-active {
+
+  .humburger {
+    span:first-child {
+      transform: rotate(-45deg);
+    }
+
+    span:nth-child(2) {
+      // height: 0;
+      opacity: 0;
+    }
+
+    span:last-child {
+      transform: rotate(45deg);
+    }
+  }
+}

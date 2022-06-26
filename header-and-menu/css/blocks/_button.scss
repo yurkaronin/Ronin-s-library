@@ -1,0 +1,32 @@
+.button {
+  display: inline-block;
+  background-color: var(--col-1);
+  color: var(--col-2);
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1;
+  padding: 14px;
+  width: max-content;
+  transition: 0.3s;
+
+  svg path {
+    // stroke: var(--col2);
+    // fill: #000000;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+
+    svg path {
+      // stroke: var(--col2);
+    }
+
+  }
+
+  @media (max-width: 650px) {}
+}

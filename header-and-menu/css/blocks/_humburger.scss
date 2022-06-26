@@ -1,0 +1,49 @@
+.humburger {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  z-index: 700;
+  border-radius: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+
+  /* &:before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    bottom: -20px;
+    right: -20px;
+    background-color: red;
+  } */
+
+  span {
+    position: absolute;
+    display: block;
+    width: 80%;
+    height: 2px;
+    background: var(--col-2);
+
+    &:first-child {
+      transform: translateY(-8px);
+      transition: all 0.3s;
+    }
+
+    &:nth-child(2) {
+      transform: translateY(0);
+      transition: all 0.1s;
+      opacity: 1;
+    }
+
+    &:last-child {
+      transform: translateY(8px);
+      transition: all 0.3s;
+    }
+
+  }
+
+}

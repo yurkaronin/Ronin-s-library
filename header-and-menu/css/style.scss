@@ -1,0 +1,13 @@
+@charset "utf-8";
+
+// базовые стили
+@import "basic/basic";
+// css-анимации
+@import "animation/animation";
+// BEM-блоки
+@import "blocks/blocks";
+// смысловые секции
+@import "sections/sections";
+// стилизация интерактивных элементов
+@import "js-active/js-active";
+

@@ -1,0 +1,70 @@
+.site-header {
+  position: relative;
+  box-shadow: inset 0 -1px 0 0 #f2f5f9;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: #fff;
+  margin-bottom: 30px;
+  display: block;
+
+  &__branding {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 16px;
+    width: 400px;
+  }
+  &__logotype {
+    width: 20%;
+  }
+  &__description {
+    width: calc(80% - 16px);
+  }
+  &__text {
+    margin: 0;
+  }
+  &__top-menu {
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    width: 200px;
+  }
+  &__menu-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  &__menu-link {
+    text-decoration: none;
+    color: inherit;
+    text-decoration: none;
+    transition: all .3s;
+    position: relative;
+
+    &::before {
+      background: var(--col-2);
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      transform: scaleX(0);
+      // transform-origin: center center;
+      transition: all 0.2s;
+    }
+
+    &:hover {
+      &::before {
+        transform: scaleX(1);
+        width: 100%;
+      }
+    }
+
+  }
+
+
+}
