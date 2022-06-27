@@ -1,0 +1,125 @@
+let modalOverlay2 = document.querySelector(".modal-overlay "),
+	modals2 = document.querySelectorAll(".modal");
+
+function removeYourNeeds() {
+	modalOverlay2.classList.remove("modal-overlay--visible"),
+		document.body.classList.toggle("custom-lock"),
+		modals2.forEach(function (el) {
+			el.classList.remove("modal--visible"), document.body.classList.toggle("custom-lock");
+		});
+}
+
+var appointment = document.forms.appointment;
+appointment.onsubmit = async (e) => {
+	e.preventDefault();
+
+	let formData = new FormData(appointment)
+	let appointment_filial = appointment.querySelector('[name=filial]')
+	let appointment_specialities = appointment.querySelector('[name=specialities]')
+	let appointment_doctor = appointment.querySelector('[name=doctor]')
+
+	formData.set('filial', appointment_filial.options[appointment_filial.selectedIndex].text);
+	formData.set('specialities', appointment_specialities.options[appointment_specialities.selectedIndex].text);
+	formData.set('doctor', appointment_doctor.options[appointment_doctor.selectedIndex].text);
+
+
+	console.log(formData);
+	let response = await fetch('/include/forms/sendmail.php', {
+		method: 'POST',
+		body: formData
+	});
+
+	let result = await response.json();
+
+	if (result.message === 'Y' ) {
+
+		appointment.reset();
+		modals2.forEach(function (el) {
+			el.classList.remove("modal--visible"), document.body.classList.toggle("custom-lock");
+		}),
+			document.querySelector('[data-target="dialog-window-success"]').classList.add("modal--visible"),
+			modalOverlay2.classList.add("modal-overlay--visible"),
+			document.body.classList.toggle("custom-lock");
+
+		setTimeout(removeYourNeeds, 3000);
+	} else {
+
+	/*	if (result.name === ''){
+			appointment.querySelector('input[name=name]').closest('.custom-form__item-wrapper').classList.add("js-field-error");
+		} else {
+			appointment.querySelector('input[name=name]').closest('.custom-form__item-wrapper').classList.remove("js-field-error");
+		}
+		if (result.tel === ''){
+			appointment.querySelector('input[name=tel]').closest('.custom-form__item-wrapper').classList.add("js-field-error");
+		} else {
+			appointment.querySelector('input[name=tel]').closest('.custom-form__item-wrapper').classList.remove("js-field-error");
+		}*/
+
+		modals2.forEach(function (el) {
+			el.classList.remove("modal--visible"), document.body.classList.toggle("custom-lock");
+		}),
+			document.querySelector('[data-target="dialog-window-error"]').classList.add("modal--visible"),
+			modalOverlay2.classList.add("modal-overlay--visible"),
+			document.body.classList.toggle("custom-lock");
+
+		setTimeout(removeYourNeeds, 3000);
+
+	}
+
+};
+
+
+
+
+var callback = document.forms.callback;
+callback.onsubmit = async (e) => {
+	e.preventDefault();
+
+	let formData = new FormData(callback)
+
+	console.log(formData);
+	let response = await fetch('/include/forms/sendmail.php', {
+		method: 'POST',
+		body: formData
+	});
+
+	let result = await response.json();
+
+	if (result.message === 'Y' ) {
+
+		callback.reset();
+		modals2.forEach(function (el) {
+			el.classList.remove("modal--visible"), document.body.classList.toggle("custom-lock");
+		}),
+			document.querySelector('[data-target="dialog-window-success"]').classList.add("modal--visible"),
+			modalOverlay2.classList.add("modal-overlay--visible"),
+			document.body.classList.toggle("custom-lock");
+
+		setTimeout(removeYourNeeds, 3000);
+	} else {
+
+		/*	if (result.name === ''){
+				appointment.querySelector('input[name=name]').closest('.custom-form__item-wrapper').classList.add("js-field-error");
+			} else {
+				appointment.querySelector('input[name=name]').closest('.custom-form__item-wrapper').classList.remove("js-field-error");
+			}
+			if (result.tel === ''){
+				appointment.querySelector('input[name=tel]').closest('.custom-form__item-wrapper').classList.add("js-field-error");
+			} else {
+				appointment.querySelector('input[name=tel]').closest('.custom-form__item-wrapper').classList.remove("js-field-error");
+			}*/
+
+		modals2.forEach(function (el) {
+			el.classList.remove("modal--visible"), document.body.classList.toggle("custom-lock");
+		}),
+			document.querySelector('[data-target="dialog-window-error"]').classList.add("modal--visible"),
+			modalOverlay2.classList.add("modal-overlay--visible"),
+			document.body.classList.toggle("custom-lock");
+
+		setTimeout(removeYourNeeds, 3000);
+
+	}
+
+};
+
+

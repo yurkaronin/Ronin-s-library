@@ -1,0 +1,261 @@
+// Диалоговые окна
+var btns = document.querySelectorAll( '.btn' );
+const modalOverlay = document.querySelector( '.modal-overlay ' );
+const modals = document.querySelectorAll( '.modal' );
+const buttonClose = document.querySelectorAll( '.modal' );
+
+/* связано с закрытием формы видимо */
+modalOverlay.addEventListener( 'click', ( e ) => {
+
+	if( e.target === modalOverlay ){
+		modalOverlay.classList.remove( 'modal-overlay--visible' );
+		document.body.classList.toggle( 'custom-lock' );
+		modals.forEach( ( el ) => {
+			el.classList.remove( 'modal--visible' );
+			document.body.classList.toggle( 'custom-lock' );
+		} );
+	}
+
+	if( e.target.classList.contains( 'modal-close' ) ){
+		modalOverlay.classList.remove( 'modal-overlay--visible' );
+		document.body.classList.toggle( 'custom-lock' );
+		modals.forEach( ( el ) => {
+			el.classList.remove( 'modal--visible' );
+			document.body.classList.toggle( 'custom-lock' );
+		} );
+	}
+
+	if( e.target.classList.contains( 'button--close-text' ) ){
+		modalOverlay.classList.remove( 'modal-overlay--visible' );
+		document.body.classList.toggle( 'custom-lock' );
+		modals.forEach( ( el ) => {
+			el.classList.remove( 'modal--visible' );
+			document.body.classList.toggle( 'custom-lock' );
+		} );
+	}
+} );
+
+// Кастомная валидация форм
+(function(){
+	window.addEventListener( "click", function( event ){
+
+		if( event.target.classList.contains( "js-validate" ) ){
+
+			const formParent = event.target.closest( "form" );
+
+			formParent.querySelectorAll( ".custom-form__item-wrapper" ).forEach( function( item ){
+				console.log( item )
+				if( item.querySelector( "[data-required]" ) ){
+					if( item.querySelector( "[data-required]" ).value === '' ){
+						console.log( "не заполнен" )
+						item.classList.add( "js-field-error" );
+					}else{
+						console.log( "заполнен" )
+						item.classList.remove( "js-field-error" );
+					}
+				}
+			} );
+		}
+	} )
+})();
+
+
+/*** функции связанные с модалками ****/
+
+/* закрытие результирующей модалки после отправки формы */
+function removeYourNeeds(){
+	modalOverlay.classList.remove( "modal-overlay--visible" ),
+		document.body.classList.toggle( "custom-lock" ),
+		modals.forEach( function( el ){
+			el.classList.remove( "modal--visible" ), document.body.classList.toggle( "custom-lock" );
+		} );
+}
+
+/* сброс формы + отображение нужной результирующей модалки вместо модалки с формой */
+function formSendHandler( formEl, resSend ){
+	formEl.reset();
+
+	modals.forEach( function( el ){
+		el.classList.remove( "modal--visible" ), document.body.classList.toggle( "custom-lock" );
+	} );
+	if( resSend === true ){
+		document.querySelector( '[data-target="dialog-window-success"]' ).classList.add( "modal--visible" );
+	}else{
+		document.querySelector( '[data-target="dialog-window-error"]' ).classList.add( "modal--visible" );
+	}
+
+	setTimeout( removeYourNeeds, 3000 );
+}
+
+/*** РЕАЛИЗАЦИИ ОБРАБОТОК ФОРМ***/
+
+/* реализация обработки модалки Запись на прием и отправки письма*/
+
+function appointmentHandler( path, e ){
+
+	/*selects - choices*/
+	let doctorID = e.getAttribute( 'data-doctor' ) || false;
+	let specID = e.getAttribute( 'data-spec' ) || false;
+	let filialID = e.getAttribute( 'data-filial' ) || false;
+
+	let serviceID = e.getAttribute( 'data-service' ) || false;
+
+	if( typeof choicesFilial !== 'undefined' )
+		choicesFilial.destroy();
+	if( typeof choicesSpecialities !== 'undefined' )
+		choicesSpecialities.destroy();
+	if( typeof choicesDoctor !== 'undefined' )
+		choicesDoctor.destroy();
+
+	if( doctorID ){
+		document.querySelector( `#appointment select[name='doctor'] >
+			 option[value='` + doctorID + `']` ).setAttribute( "selected", "selected" );
+	}
+	if( specID ){
+		document.querySelector( `#appointment select[name='specialities'] >
+			 option[value='` + specID + `']` ).setAttribute( "selected", "selected" );
+	}
+
+	if( filialID ){
+		document.querySelector( `#appointment select[name='filial'] >
+			 option[value='` + filialID + `']` ).setAttribute( "selected", "selected" );
+	}
+	if( serviceID ){
+		let service = document.querySelector(`#appointment input[name='service']`);
+		service.value = serviceID;
+	}
+
+
+	choicesFilial = new Choices( `#appointment select[name='filial']`, {
+		itemSelectText: '',
+		searchEnabled: false,
+		placeholder: false,
+	} );
+	choicesSpecialities = new Choices( `#appointment select[name='specialities']`, {
+		itemSelectText: '',
+		searchEnabled: false,
+		placeholder: false,
+	} );
+	choicesDoctor = new Choices( `#appointment select[name='doctor']`, {
+		itemSelectText: '',
+		searchEnabled: false,
+		placeholder: false,
+	} );
+
+
+	/* form onsubmit appointment*/
+	var appointment = document.forms.appointment;
+	appointment.onsubmit = async ( e ) => {
+		e.preventDefault();
+
+		let canSend = true;
+
+		let appointment_tel = appointment.querySelector( '[name=tel]' );
+		let tel_count = appointment_tel.value.replace( /\D+/g, '' ).length;
+
+
+		let appointment_filial = appointment.querySelector( '#appointment [name=filial]' );
+		let appointment_filial_wrap = appointment_filial.closest( '.choices__inner' );
+		let appointment_specialities = appointment.querySelector( '[name=specialities]' );
+		let appointment_specialities_wrap = appointment_specialities.closest( '.choices__inner' );
+		let appointment_doctor = appointment.querySelector( '[name=doctor]' );
+
+
+		/* валидация полей */
+		if( tel_count !== 11 ){
+			if( !appointment_tel.classList.contains( 'field__error' ) ){
+				appointment_tel.classList.add( 'field__error' );
+			}
+			canSend = false;
+		}else{
+			if( appointment_tel.classList.contains( 'field__error' ) ){
+				appointment_tel.classList.remove( 'field__error' );
+			}
+		}
+
+		if( appointment_specialities.value === "" ){
+			if( !appointment_specialities_wrap.classList.contains( 'field__error' ) ){
+				appointment_specialities_wrap.classList.add( 'field__error' );
+			}
+			canSend = false;
+		}else{
+			if( appointment_specialities_wrap.classList.contains( 'field__error' ) ){
+				appointment_specialities_wrap.classList.remove( 'field__error' );
+			}
+		}
+
+		if( appointment_filial.value === "" ){
+			if( !appointment_filial_wrap.classList.contains( 'field__error' ) ){
+				appointment_filial_wrap.classList.add( 'field__error' );
+			}
+			canSend = false;
+		}else{
+			if( appointment_filial_wrap.classList.contains( 'field__error' ) ){
+				appointment_filial_wrap.classList.remove( 'field__error' );
+			}
+		}
+		//tel_count
+		//speciality
+
+
+		//if(appointment_filial.value !== "" && appointment_specialities.value !== "" && tel_count === 11){
+		if( canSend ){
+			let formData = new FormData( appointment );
+			console.log( 'С валидацией - все ок' )
+			formData.set( 'filial', appointment_filial.options[appointment_filial.selectedIndex].text );
+			formData.set( 'specialities', appointment_specialities.options[appointment_specialities.selectedIndex].text );
+			formData.set( 'doctor', appointment_doctor.options[appointment_doctor.selectedIndex].text );
+
+			let response = await fetch( '/include/forms/sendmail.php', {
+				method: 'POST',
+				body: formData
+			} );
+
+			let result = await response.json();
+
+			if( result.message === 'Y' ){
+				formSendHandler( appointment, true );
+			}else{
+				formSendHandler( appointment, false );
+			}
+		}
+		/*else{
+			//отобразить ошибки в заполнении формы
+			console.log('Не пробовали заполнить обязательные поля?')
+			if(appointment_filial.value === ""){
+				appointment_filial.style=
+			}
+
+		//&& appointment_specialities.value !== "" && tel_count === 11){
+		}*/
+
+
+	};
+
+}
+
+/* Основной обработчик всех модалок с разветвлением на разные местные обработчики модалок*/
+function btnsHandler(){
+	btns.forEach( ( el ) => {
+		el.addEventListener( 'click', ( e ) => {
+			event.preventDefault();
+			let path = e.currentTarget.getAttribute( 'data-path' );
+
+			modals.forEach( ( el ) => {
+				el.classList.remove( 'modal--visible' );
+				document.body.classList.toggle( 'custom-lock' );
+			} );
+
+			/*разбитие на разные типы модалок и их обработка*/
+			if( path === 'dialog-window-appointment' ){
+				appointmentHandler( path, e.currentTarget );
+			}
+
+			document.querySelector( `[data-target="${path}"]` ).classList.add( 'modal--visible' );
+			modalOverlay.classList.add( 'modal-overlay--visible' );
+			document.body.classList.toggle( 'custom-lock' );
+		} );
+	} );
+}
+
+btnsHandler();

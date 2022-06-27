@@ -1,0 +1,295 @@
+"use strict";
+// прилипающее меню в шапке
+window.onscroll = function showHeader() {
+  var header = document.querySelector('.header');
+
+  if (window.pageYOffset > header.offsetHeight) {
+    header.classList.add('sticky');
+  } else {
+    header.classList.remove('sticky');
+  }
+}
+
+// кнопка меню и кнопка поиска в шапке
+let menuButton = document.querySelector('.button-menu');
+let searchButton = document.querySelector('.button-search');
+let mainMenu = document.querySelector('.mobile-main-nav');
+let headerSearch = document.querySelector('.header__search-form');
+
+menuButton.addEventListener('click', function (r) {
+  document.body.classList.toggle('custom-lock');
+  menuButton.classList.toggle('active');
+  mainMenu.classList.toggle('active');
+  searchButton.classList.remove('active');
+  headerSearch.classList.remove('active');
+});
+
+searchButton.addEventListener('click', function (r) {
+  searchButton.classList.toggle('active');
+  headerSearch.classList.toggle('active');
+  menuButton.classList.remove('active');
+  mainMenu.classList.remove('active');
+  document.body.classList.remove('custom-lock');
+});
+
+
+// взаимное отключение кнопок меню и поиск
+if (menuButton.classList.contains('active')) {
+  searchButton.classList.remove('active');
+}
+
+if (searchButton.classList.contains('active')) {
+  menuButton.classList.remove('active');
+}
+
+
+// кнопка аккордеона в меню
+let mobMenu = document.querySelectorAll(".main-nav-mobile");
+let subList = document.querySelectorAll(".sublist-nav");
+/*let subMenuButton = document.querySelectorAll('.toggle-btn').forEach((item) =>
+  item.addEventListener('click', () => {
+    item.classList.toggle('active');
+    subList.classList.toggle('active');
+    mobMenu.classList.toggle('active');
+  })
+);*/
+
+let subMenuButton = document.querySelectorAll('.toggle-btn-wrap').forEach((item) =>
+    item.addEventListener('click', () => {
+      item.querySelector('.toggle-btn').classList.toggle('active');
+     /*subList.classList.toggle('active');
+      mobMenu.classList.toggle('active');*/
+    })
+);
+
+// маска для поля с телефоном
+Inputmask("+7 (999) 999-99-99").mask('[type="tel"]');
+
+// Кастомный select
+const elements = document.querySelectorAll('.custom-select__list');
+
+
+if (elements) {
+  let nameSelect;
+  for (let i = 0, customName = 1; i < elements.length; i++) {
+    console.log(`select${customName}`);
+    elements[i].setAttribute('data-name', `select${customName}`);
+    nameSelect = elements[i].getAttribute('data-name');
+
+  const example = new Choices( `[data-name='${nameSelect}']`, {
+
+    /*const example = new Choices(`[data-name='${nameSelect}']`, {*/
+      itemSelectText: '',
+      searchEnabled: false,
+      placeholder: false,
+    });
+
+    customName++;
+  }
+};
+
+SmoothScroll({
+  // Время скролла 400 = 0.4 секунды
+  animationTime: 800,
+  // Размер шага в пикселях
+  stepSize: 75,
+
+  // Дополнительные настройки:
+
+  // Ускорение
+  accelerationDelta: 30,
+  // Максимальное ускорение
+  accelerationMax: 2,
+
+  // Поддержка клавиатуры
+  keyboardSupport: true,
+  // Шаг скролла стрелками на клавиатуре в пикселях
+  arrowScroll: 50,
+
+  // Pulse (less tweakable)
+  // ratio of "tail" to "acceleration"
+  pulseAlgorithm: true,
+  pulseScale: 4,
+  pulseNormalize: 1,
+
+  // Поддержка тачпада
+  touchpadSupport: true,
+})
+
+
+// табы faq
+var faqItems = document.querySelectorAll('.main-faq__item');
+
+for (let faqItem of faqItems) {
+  let itemTitle = faqItem.querySelector('.main-faq__issue');
+  itemTitle.onclick = function () {
+    faqItem.classList.toggle('active');
+  };
+}
+
+// табы второй уровень
+var faqItems2 = document.querySelectorAll('.main-faq__subitem');
+for (let faqItem2 of faqItems2) {
+  let itemTitle2 = faqItem2.querySelector('.main-faq__issue');
+  itemTitle2.onclick = function () {
+    faqItem2.classList.toggle('active');
+  };
+}
+
+
+// Анонсы филлиалов
+let filialCards = document.querySelectorAll('.filial-card');
+for (let filialCard of filialCards) {
+  filialCard.onclick = function () {
+    filialCard.classList.toggle('active');
+  };
+}
+;// слайдер первый экран
+const topSwiper = document.querySelector('.top-slider__swiper');
+if (topSwiper) {
+  let swiper1 = new Swiper(".top-slider__swiper", {
+    slidesPerView: 1,
+    loop: true,
+    navigation: {
+      nextEl: ".top-slider__button-next",
+      prevEl: ".top-slider__button-prev",
+    },
+    pagination: {
+      el: ".top-slider__pagination",
+      clickable: true,
+    },
+  });
+}
+
+// слайдер по направлениям услуг с иконками
+const directionsSwiper = document.querySelector('.services-group-slider__swiper');
+if (directionsSwiper) {
+  let swiper2 = new Swiper(".services-group-slider__swiper", {
+    breakpoints: {
+      320: {
+        slidesPerView: 2,
+        spaceBetween: 15,
+      },
+      640: {
+        slidesPerView: 3,
+        spaceBetween: 16,
+      },
+      1024: {
+        slidesPerView: 4,
+        spaceBetween: 24,
+      },
+      1400: {
+        slidesPerView: 5,
+        spaceBetween: 32,
+      }
+    },
+    slidesPerGroup: 1,
+    loopFillGroupWithBlank: true,
+    loop: true,
+    navigation: {
+      nextEl: ".services-group-slider__button-next",
+      prevEl: ".services-group-slider__button-prev"
+    },
+    pagination: {
+      el: ".services-group-slider__pagination",
+      clickable: true,
+    },
+  });
+}
+
+// слайдер специалистов
+const doctorsSwiper = document.querySelector('.doctors-slider__swiper');
+if (doctorsSwiper) {
+  var swiper = new Swiper(".doctors-slider__swiper", {
+    breakpoints: {
+      230: {
+        slidesPerView: 1,
+        spaceBetween: 24,
+      },
+      // 1024: {
+      //   slidesPerView: 1,
+      //   spaceBetween: 24,
+      //   centeredSlides: false,
+      // },
+      1024: {
+        slidesPerView: 'auto',
+        spaceBetween: 34,
+      }
+    },
+    centeredSlides: true,
+    loop: true,
+    loopedSlides: 2,
+    loopAdditionalSlides: 2,
+    navigation: {
+      nextEl: ".doctors-slider__button-next",
+      prevEl: ".doctors-slider__button-prev"
+    },
+    pagination: {
+      el: ".doctors-slider__pagination",
+      clickable: true,
+    },
+  });
+}
+
+// Слайдер с текстовыми отзывами
+const reviewsSwiper = document.querySelector('.reviews-swiper');
+if (reviewsSwiper) {
+  var swiper3 = new Swiper(".reviews-swiper", {
+    autoHeight: true,
+    loop: true,
+    navigation: {
+      nextEl: ".reviews-slider__button-next",
+      prevEl: ".reviews-slider__button-prev",
+    },
+    slidesPerView: 1,
+    spaceBetween: 30,
+    freeMode: true,
+    pagination: {
+      el: ".reviews-slider__pagination",
+      clickable: true,
+    },
+  });
+}
+
+// custom select 
+const element = document.querySelector('.js-select-branch');
+if (element) {
+  const choices = new Choices(element);
+}
+
+
+// добавляем звёздочку к обязательным для заполнения лейблам
+let requiredFields = document.querySelectorAll('.js-warn');
+if (requiredFields) {
+  for (let i = 0; i < requiredFields.length; i++) {
+    let span = document.createElement('span');
+    span.innerHTML = "*";
+    requiredFields[i].append(span);
+    console.log("wow");
+  }
+}
+// КОНЕЦ добавляем звёздочку к обязательным для заполнения лейблам
+
+// кастомные поля добавления файлов в форму 
+/*const inputElement = document.querySelector('input[type="file"]');
+const pond = FilePond.create(
+  inputElement, {
+    allowDrop: false,
+    allowPaste: false,
+    allowReplace: false,
+    allowRevert: false,
+    allowProcess: false,
+    onupdatefiles: (files) => {
+      const textAddFile = document.querySelector(".filepond--drop-label");
+      if (files.length === 0) {
+        textAddFile.style.display = 'block';
+      } else {
+        textAddFile.style.display = 'none';
+      }
+    },
+  }
+);
+
+
+document.querySelector(".filepond--credits").remove();*/
+// КОНЕЦ кастомные поля добавления файлов в форму 

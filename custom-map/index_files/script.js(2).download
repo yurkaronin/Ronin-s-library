@@ -1,0 +1,22 @@
+let home_filials_block = document.getElementById( 'home_filials_block' );
+
+let home_filials = document.getElementById( 'home_filials' ) || false;
+let home_filials_select = home_filials.querySelector( '[name=home_filials_select]' );
+
+var xmlhttpfilials = new XMLHttpRequest();
+
+home_filials_select.addEventListener( 'change', function(){
+	xmlhttpfilials.open( "POST", "/local/templates/main/components/bxcustom/empty/home-filials-block/ajax_filial.php" );
+	xmlhttpfilials.setRequestHeader( "Content-Type", "application/json" );
+	xmlhttpfilials.addEventListener( "readystatechange", () => {
+		if( xmlhttpfilials.readyState === 4 && xmlhttpfilials.status === 200 ){
+			home_filials_block.innerHTML = xmlhttpfilials.response;
+			btns = document.querySelectorAll( '.btn' );
+			btnsHandler();
+		}
+	} );
+	xmlhttpfilials.send( JSON.stringify( {
+		'filial_id': home_filials_select.value
+	} ) );
+
+} );
