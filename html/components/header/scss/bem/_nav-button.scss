@@ -1,0 +1,57 @@
+.nav-button {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  transition-duration: 0.5s;
+  cursor: pointer;
+  margin: auto;
+  // background-color: transparent;
+  border: none;
+  padding: 0;
+  display: block;
+  background-color: transparent;
+
+  .icon {
+    pointer-events: none;
+    transition-duration: 0.5s;
+    position: absolute;
+    height: 2px;
+    width: 32px;
+    top: 16px;
+    background-color: var(--White);
+    left: 0;
+    &:before {
+      transition-duration: 0.5s;
+      position: absolute;
+      width: 32px;
+      height: 2px;
+      left: 0;
+      background-color: var(--White);
+      content: "";
+      top: -11px;
+    }
+    &:after {
+      transition-duration: 0.5s;
+      position: absolute;
+      width: 32px;
+      height: 2px;
+      left: 0;
+      background-color: var(--White);
+      content: "";
+      top: 11px;
+    }
+  }
+
+  &.open {
+    .icon {
+      transition-duration: 0.5s;
+      background: transparent;
+      &:before {
+        transform: rotateZ(45deg) scaleX(1.25) translate(6px, 8px);
+      }
+      &:after {
+        transform: rotateZ(-45deg) scaleX(1.25) translate(6px, -8px);
+      }
+    }
+  }
+}

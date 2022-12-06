@@ -1,0 +1,41 @@
+.header-sticky {
+  .header {
+    background: var(--Grad);
+
+    &::after {
+      width: 100%;
+    }
+
+    &__grid {
+      border-bottom: none;
+      transition: border-bottom 0.3s;
+      &::after {
+        width: 0;
+        &::after {
+          opacity: 0;
+        }
+      }
+    }
+    .navigation {
+      &__link {
+        padding-top: 29px;
+        padding-bottom: 29px;
+        &.active {
+          background-color: var(--Blue);
+          color: var(--White) !important;
+        }
+      }
+    }
+    .navigation__item--mod {
+      .navigation__link {
+        padding: 0;
+      }
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .header__grid {
+      padding: 12px 0;
+    }
+  }
+}

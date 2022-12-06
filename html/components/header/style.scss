@@ -1,0 +1,41 @@
+:root {
+  --Inter: 'Inter', sans-serif;
+  --Merriweather: 'Merriweather', serif;
+
+  --DarkBlue: #0F2C4D;
+  --White: #ffffff;
+  --Bg: #E9EFF5;
+  --Blue: #0770DC;
+  --Cyan: #15A1EF;
+  --Grey: #7590AD;
+  --Grey2: #B2B9C4;
+  --Red: #E40520;
+  --DarkGrey: #0F2C4D;
+  --Line: #CFD8E2;
+  --Black: #000000;
+
+  --Grad: linear-gradient(277.49deg, rgba(7, 112, 220, 0.8) 0%, rgba(7, 112, 220, 0) 100%), #00163A;
+}
+
+@import "scss/site/fonts";
+@import "scss/site/global";
+// повторяющиеся блоки
+@import "scss/bem/visually-hidden";
+@import "scss/bem/section";
+@import "scss/bem/wrapper";
+@import "scss/bem/button";
+@import "scss/bem/nav-button";
+@import "scss/bem/desctop-menu";
+
+// секции
+@import "scss/sections/header";
+@import "scss/sections/navigation";
+// активности
+@import "scss/bem/header-sticky";
+@import "scss/bem/mob-menu-open";
+
+
+// временные стили
+body {
+  background-color: #7f10be;
+}
